@@ -961,7 +961,7 @@ footer{
     height:300px;
   }
 
-  
+
 }
 
 @media(max-width:576px){
@@ -992,11 +992,15 @@ footer{
 
 .menu-toggle{
   display:none;
-  font-size:30px;
+  font-size:24px;
   color:#0f172a;
   cursor:pointer;
+  transition:0.3s;
 }
 
+.menu-toggle:hover{
+  color:#2563eb;
+}
 /* =========================================================
    MOBILE NAVBAR
 ========================================================= */
@@ -1007,33 +1011,38 @@ footer{
     display:block;
   }
 
+  .navbar{
+    position:fixed;
+    top:0;
+    right:-100%;
+    width:75%;
+    height:100vh;
+
+    background:white;
+
+    display:flex;
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    padding:120px 30px;
+
+    gap:20px;
+
+    transition:0.4s;
+
+    box-shadow:-10px 0 30px rgba(0,0,0,0.08);
+  }
+
+  .navbar a{
+    font-size:18px;
+    width:100%;
+    border-bottom:1px solid #e2e8f0;
+    padding-bottom:10px;
+  }
+
   .navbar.show{
-  display:flex;
-}
-
- .navbar{
-  position:absolute;
-  top:90px;
-  left:0;
-  width:100%;
-  background:white;
-  flex-direction:column;
-  align-items:center;
-  gap:25px;
-  padding:35px 0;
-  box-shadow:0 10px 30px rgba(0,0,0,0.08);
-
-  display:flex;
-  transform:translateY(-20px);
-  opacity:0;
-  pointer-events:none;
-  transition:0.3s ease;
-}
-
-.navbar.show{
-  transform:translateY(0);
-  opacity:1;
-  pointer-events:auto;
-}
+    right:0;
+  }
 
 }

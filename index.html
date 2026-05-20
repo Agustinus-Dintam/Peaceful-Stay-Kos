@@ -53,13 +53,13 @@
       <!-- NAVBAR -->
 
       <!-- HAMBURGER -->
-
-<div class="menu-toggle" id="menu-toggle">
-
-  <i class="fa-solid fa-bars"></i>
-
-
-</div>
+       
+      <div 
+       
+      class="menu-toggle" id="menu-toggle">
+       <i class="fa-solid fa-bars"></i>
+    
+    </div>
 
 <!-- NAVBAR -->
 
@@ -74,6 +74,7 @@
   <a href="#kontak">Kontak</a>
 
 </nav>
+
       <!-- BUTTON -->
 
       <a
@@ -652,14 +653,19 @@
   });
 
   // ================= HAMBURGER MENU =================
-  const toggle = document.getElementById("menu-toggle");
-  const navbar = document.getElementById("navbar");
+ const toggle = document.getElementById("menu-toggle");
+const navbar = document.getElementById("navbar");
 
-  toggle.addEventListener("click", function () {
-    navbar.classList.toggle("show");
-    toggle.classList.toggle("active");
+toggle.addEventListener("click", function () {
+  navbar.classList.toggle("show");
+  toggle.classList.toggle("active");
+});
+
+document.querySelectorAll(".navbar a").forEach(link => {
+  link.addEventListener("click", () => {
+    navbar.classList.remove("show");
   });
-
+});
   // optional: tutup menu saat klik link
   document.querySelectorAll(".navbar a").forEach(link => {
     link.addEventListener("click", () => {
